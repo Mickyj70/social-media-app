@@ -8,6 +8,7 @@ const mongoose = require("mongoose");
 const connectDB = require("./config/dbConn");
 const usersRouter = require("./routes/users");
 const authRouter = require("./routes/auth");
+const postsRouter = require("./routes/posts");
 const PORT = process.env.PORT || 3500;
 
 //connect DB
@@ -27,6 +28,7 @@ app.use(morgan("common"));
 // routes
 app.use("/api/users", usersRouter);
 app.use("/api/auth", authRouter);
+app.use("/api/posts", postsRouter);
 
 mongoose.connection.once("open", () => {
   console.log("DB connected");
