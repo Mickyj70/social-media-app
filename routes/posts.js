@@ -3,7 +3,8 @@ const express = require("express");
 const router = express.Router();
 
 //create a post
-
+//note to future self compare passwords and make sure only logged in and authorized users are allowed to post same for every other route
+//also i can use a controller to break down the routes even more
 router.post("/", async (req, res) => {
   const newPost = new Post(req.body);
   try {
